@@ -1,0 +1,177 @@
+$cadmin-treeview: () !default;
+$cadmin-treeview: map-merge(
+	(
+		display: block,
+		font-size: 14px,
+		list-style: none,
+		margin-bottom: 0,
+		padding-left: 0,
+		btn-monospaced: (
+			font-size: 14px,
+			height: 24px,
+			width: 24px,
+			focus: (
+				box-shadow: $cadmin-component-focus-inset-box-shadow,
+			),
+		),
+		custom-control: (
+			margin-left: 4px,
+			margin-right: 4px,
+			margin-top: 1.5px,
+		),
+		group: (
+			display: block,
+			list-style: none,
+			margin-bottom: 0,
+			padding-left: 0,
+		),
+		item: (
+			padding-bottom: 2px,
+			padding-top: 2px,
+			word-wrap: break-word,
+			last-child: (
+				padding-bottom: 0,
+			),
+		),
+		link: (
+			cursor: pointer,
+			display: block,
+			min-width: 100%,
+			padding: 0,
+			position: relative,
+			user-select: none,
+			hover: (
+				text-decoration: none,
+			),
+			focus: (
+				box-shadow: $cadmin-component-focus-inset-box-shadow,
+				outline: 0,
+			),
+		),
+		component-action: (
+			display: none,
+			margin-left: 2px,
+			margin-right: 2px,
+			hover: (
+				background-color: transparent,
+				color: $cadmin-secondary,
+			),
+			focus: (
+				color: $cadmin-secondary,
+			),
+			active: (
+				background-color: transparent,
+			),
+		),
+		component-icon: (
+			display: inline,
+			height: auto,
+			margin-left: 4px,
+			margin-right: 4px,
+			width: auto,
+		),
+		component-text: (
+			padding-bottom: 1.5px,
+			padding-left: 4px,
+			padding-top: 1.5px,
+			user-select: auto,
+		),
+	),
+	$cadmin-treeview
+);
+
+$cadmin-treeview-show-component-expander-on-hover: () !default;
+$cadmin-treeview-show-component-expander-on-hover: map-deep-merge(
+	(
+		hover: (
+			component-expander: (
+				opacity: 1,
+				transition: opacity ease-in-out 600ms,
+			),
+		),
+		component-expander: (
+			opacity: 0,
+			transition: opacity ease-in-out 450ms,
+		),
+		treeview-link: (
+			focus: (
+				component-expander: (
+					opacity: 1,
+					transition: none,
+				),
+			),
+		),
+	),
+	$cadmin-treeview-show-component-expander-on-hover
+);
+
+// Variants
+
+$cadmin-treeview-light: () !default;
+$cadmin-treeview-light: map-deep-merge(
+	(
+		component-expander: (
+			color: $cadmin-secondary,
+			hover: (
+				color: $cadmin-primary,
+			),
+			btn-secondary: (
+				background-color: $cadmin-white,
+			),
+		),
+		link: (
+			color: $cadmin-gray-600,
+			hover: (
+				background-color: $cadmin-gray-100,
+				color: $cadmin-gray-900,
+			),
+			active: (
+				background-color: $cadmin-gray-200,
+				color: $cadmin-gray-900,
+			),
+			active-class: (
+				background-color: $cadmin-gray-200,
+				color: $cadmin-gray-900,
+			),
+			show: (
+				background-color: null,
+				color: null,
+			),
+		),
+	),
+	$cadmin-treeview-light
+);
+
+$cadmin-treeview-dark: () !default;
+$cadmin-treeview-dark: map-deep-merge(
+	(
+		component-expander: (
+			color: $cadmin-secondary-l1,
+			hover: (
+				color: $cadmin-primary-l1,
+			),
+		),
+		link: (
+			color: $cadmin-secondary-l1,
+			hover: (
+				background-color: rgba($cadmin-white, 0.04),
+			),
+			active-class: (
+				background-color: rgba($cadmin-white, 0.06),
+				color: $cadmin-white,
+			),
+			disabled: (
+				background-color: transparent,
+				color: rgba($cadmin-secondary-l1, 0.04),
+			),
+			show: (
+				background-color: null,
+				color: null,
+			),
+		),
+		component-action: (
+			color: $cadmin-secondary-l1,
+		),
+	),
+	$cadmin-treeview-dark
+);
