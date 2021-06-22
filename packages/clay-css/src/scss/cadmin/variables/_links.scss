@@ -281,3 +281,20 @@ $cadmin-component-action: map-deep-merge(
 	),
 	$cadmin-component-action
 );
+
+$cadmin-component-text: () !default;
+
+$cadmin-component-icon: () !default;
+$cadmin-component-icon: map-deep-merge(
+	(
+		align-items: center,
+		display: inline-flex,
+		height: 32px,
+		justify-content: center,
+		width: 32px,
+		lexicon-icon: (
+			margin-top: 0,
+		),
+	),
+	$cadmin-component-icon
+);
