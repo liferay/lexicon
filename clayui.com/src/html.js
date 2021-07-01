@@ -23,6 +23,11 @@ export default (props) => {
 				/>
 				<link href="/css/atlas.css" id="clayCSSFile" rel="stylesheet" />
 				<link
+					href="/css/cadmin.css"
+					id="clayCadminFile"
+					rel="stylesheet"
+				/>
+				<link
 					href="/css/colors.css"
 					id="clayuiCSSFile"
 					rel="stylesheet"

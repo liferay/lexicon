@@ -140,6 +140,11 @@ const generateCSSFiles = (pluginOptions) => {
 		outFile: path.join(cssDir, 'base.css'),
 	});
 
+	const cadmin = compileSass({
+		file: path.join(scssDir, 'cadmin.scss'),
+		outFile: path.join(cssDir, 'cadmin.css'),
+	});
+
 	const colors = compileSass({
 		file: path.join(clayuiSrcDir, 'colors.scss'),
 		includePaths: [scssDir],
@@ -159,6 +164,8 @@ const generateCSSFiles = (pluginOptions) => {
 	fs.writeFileSync(path.join(cssDir, 'base.css'), base.css.toString());
 
 	fs.writeFileSync(path.join(cssDir, 'base.css.map'), base.map.toString());
+
+	fs.writeFileSync(path.join(cssDir, 'cadmin.css'), cadmin.css.toString());
 
 	fs.writeFileSync(path.join(cssDir, 'colors.css'), colors.css.toString());
 
@@ -186,7 +193,7 @@ exports.onPostBootstrap = ({reporter}, pluginOptions) => {
 	generateCSSFiles(pluginOptions);
 
 	reporter.info(
-		`Compiling 'atlas.css', 'colors.css', 'base.css' and 'colors-base.css' finished!`
+		`Compiling 'atlas.css', 'colors.css', 'base.css', 'cadmin.css' and 'colors-base.css' finished!`
 	);
 };
 
@@ -208,7 +215,7 @@ exports.onCreateDevServer = ({reporter}, pluginOptions) => {
 			generateCSSFiles(pluginOptions);
 
 			reporter.info(
-				`Compiling 'atlas.css', 'colors.css', 'base.css' and 'colors-base.css' finished!`
+				`Compiling 'atlas.css', 'colors.css', 'base.css', 'cadmin.css' and 'colors-base.css' finished!`
 			);
 		}
 	}

@@ -65,3 +65,20 @@ button.link-outline {
 .component-action {
 	@include clay-link($cadmin-component-action);
 }
+
+.component-text {
+	@include clay-css($cadmin-component-text);
+}
+
+.component-icon {
+	@include clay-css($cadmin-component-icon);
+
+	.lexicon-icon {
+		$lexicon-icon: setter(
+			map-get($cadmin-component-icon, lexicon-icon),
+			()
+		);
+
+		@include clay-css($lexicon-icon);
+	}
+}
