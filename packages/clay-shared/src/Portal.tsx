@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+import {useProvider} from '@clayui/core';
+import classNames from 'classnames';
 import React from 'react';
 import {createPortal} from 'react-dom';
 
@@ -59,10 +61,14 @@ export const ClayPortal: React.FunctionComponent<IProps> = ({
 	id,
 	subPortalRef,
 }) => {
+	const {theme} = useProvider();
+
 	const parentPortalRef = React.useContext(ClayPortalContext);
 
 	const portalRef = React.useRef(
-		typeof document !== 'undefined' ? createDivElement(className, id) : null
+		typeof document !== 'undefined'
+			? createDivElement(classNames(theme, className), id)
+			: null
 	);
 
 	React.useEffect(() => {

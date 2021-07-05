@@ -27,7 +27,9 @@
 	],
 	"dependencies": {
 		"@clayui/button": "^3.6.0",
-		"@clayui/link": "^3.2.0"
+		"@clayui/core": "^3.0.0",
+		"@clayui/link": "^3.2.0",
+		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
 		"@clayui/css": "3.x",

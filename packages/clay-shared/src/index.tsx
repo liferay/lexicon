@@ -4,7 +4,7 @@
  */
 
 export const noop = () => {};
-export {ClayPortal, IBaseProps as IPortalBaseProps} from './Portal';
+export {ClayPortal} from './Portal';
 export {delegate} from './delegate';
 export {FocusScope} from './FocusScope';
 export {getEllipsisItems} from './getEllipsisItems';
@@ -18,4 +18,5 @@ export {setElementFullHeight} from './setElementFullHeight';
 export {useInternalState} from './useInternalState';
 export {useMousePosition} from './useMousePosition';
 export {MouseSafeArea} from './MouseSafeArea';
+export type {IBaseProps as IPortalBaseProps} from './Portal';
 export type {TInternalStateOnChange} from './useInternalState';
